@@ -1,0 +1,20 @@
+name: Hawser Agent
+slug: hawser
+version: "1.0.0"
+description: Hawser agent for Dockhand (Edge mode)
+arch:
+  - amd64
+  - armv7
+  - armhf
+  - aarch64
+startup: services
+boot: auto
+host_network: false
+map:
+  - docker_socket
+options:
+  dockhand_server_url: ""
+  token: ""
+schema:
+  dockhand_server_url: str
+  token: password
