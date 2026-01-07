@@ -1,6 +1,6 @@
 name: Hawser Agent
 slug: hawser
-version: "1.1.5"
+version: "1.1.6"
 description: Hawser agent for Dockhand (Edge mode)
 
 arch:
@@ -15,10 +15,16 @@ boot: auto
 # 🔴 OBLIGATOIRE pour accéder au docker.sock
 protected: false
 
-devices:
-  - /var/run/docker.sock:/var/run/docker.sock
+privileged: true
+
+#devices:
+#  - /var/run/docker.sock:/var/run/docker.sock
 
 host_network: false
+
+map:
+  - docker_socket
+
 
 options:
   dockhand_server_url: ""
