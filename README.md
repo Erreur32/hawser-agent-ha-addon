@@ -1,6 +1,6 @@
 # Hawser Agent – Add-on Home Assistant OS
 
-##⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 > **Important notice**
 >
