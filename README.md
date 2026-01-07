@@ -1,5 +1,7 @@
 # Hawser Agent – Add-on Home Assistant OS
 
+![Dockhand Logo](logo.png)
+
 ## 📌 Présentation
 
 Cet add-on permet d’exécuter **Hawser** sur **Home Assistant OS** afin de connecter l’hôte Home Assistant à **Dockhand**.
