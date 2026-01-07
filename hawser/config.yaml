@@ -1,29 +1,25 @@
 name: Hawser Agent
 slug: hawser
-version: "1.1.6"
+version: "1.1.7"
 description: Hawser agent for Dockhand (Edge mode)
 
 arch:
   - amd64
-  - armv7
-  - armhf
   - aarch64
 
 startup: services
 boot: auto
 
-# 🔴 OBLIGATOIRE pour accéder au docker.sock
-protected: false
 
-privileged: true
+# 🔴 FORMAT HA 2026 (LISTE OBLIGATOIRE)
+privileged:
+  - SYS_ADMIN
 
-#devices:
-#  - /var/run/docker.sock:/var/run/docker.sock
+# ⚠️ map docker_socket ignoré en 2026 → on l’enlève
+# map:
+#   - docker_socket
 
 host_network: false
-
-map:
-  - docker_socket
 
 
 options:
