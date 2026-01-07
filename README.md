@@ -12,6 +12,7 @@
 >
 > ✅ This is **not a bug in Hawser or Dockhand**, but a design restriction of Home Assistant OS.
 
+Still trying to find a proper solution for that !
 
 ![Dockhand Logo](logo.png)
 
@@ -31,88 +32,6 @@ Son rôle est simple :
 
 ---
 
-## 🧠 Fonctionnement
-
-* Hawser tourne dans un container géré par Home Assistant
-* Il se connecte à Dockhand via WebSocket (TLS)
-* Dockhand peut alors administrer les containers Docker de Home Assistant
-
-Aucun port entrant n’est ouvert sur Home Assistant.
-
----
-
-## 🔐 Sécurité
-
-* Mode **Edge** uniquement (connexion sortante)
-* Pas de `host_network`
-* Accès Docker strictement via le socket
-* Authentification par **token secret**
-
-⚠️ Donner accès à Dockhand = donner accès complet à Docker.
-
----
-
-## 🚀 Installation
-
-1. Ajouter le dépôt GitHub de l’add-on dans Home Assistant
-2. Installer **Hawser Agent**
-3. Configurer :
-
-   * URL du serveur Dockhand
-   * Token secret
-4. Démarrer l’add-on
-
-Une fois connecté, l’environnement apparaît automatiquement dans Dockhand.
-
----
-
-## 📊 Logs (Home Assistant)
-
-Les logs sont **100 % intégrés à Home Assistant**.
-
-### Accès aux logs
-
-Home Assistant → Settings → Add-ons → Hawser Agent → Logs
-
-### Logs standards
-
-```
-INFO starting hawser agent
-INFO connecting to Dockhand
-INFO websocket connected
-INFO docker client ready
-```
-
-### Logs debug
-
-Le mode debug est activé par défaut dans cet add-on.
-
-```
-DEBUG docker event received
-DEBUG websocket heartbeat ok
-```
-
----
-
-## 🧪 Dépannage rapide
-
-### L’agent ne se connecte pas
-
-* Vérifier l’URL Dockhand (`/api/hawser/connect`)
-* Vérifier le token
-* Vérifier l’heure système (TLS)
-
-### Aucun container visible
-
-* Vérifier que l’add-on est démarré
-* Vérifier les logs (permission Docker)
-
----
-
-## ✅ Compatibilité
-
-* Home Assistant OS uniquement
-* Toutes architectures supportées par HA
 
 ---
 
