@@ -12,6 +12,9 @@ boot: auto
 
 host_network: false
 
+# 🔴 OBLIGATOIRE pour accéder au docker.sock
+protected: false
+
 map:
   - docker_socket
 
