@@ -1,6 +1,21 @@
 # Hawser Agent – Add-on Home Assistant OS
 
+##⚠️ Disclaimer
+
+> **Important notice**
+>
+> This Home Assistant add-on is **currently not functional on Home Assistant OS** due to **platform limitations**.
+>
+> Home Assistant OS **does not allow third-party add-ons to access the Docker API** (`/var/run/docker.sock`), even in read-only or privileged modes. As a result, Docker-based agents such as **Hawser** cannot retrieve container information from HA OS.
+>
+> 🔧 **Status**: The add-on is under active investigation. Alternative approaches and workarounds are being evaluated, but there is **no guaranteed solution** at this time.
+>
+> ✅ This is **not a bug in Hawser or Dockhand**, but a design restriction of Home Assistant OS.
+
+
 ![Dockhand Logo](logo.png)
+
+ 
 
 ## 📌 Présentation
 
